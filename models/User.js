@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+// const { Schema } = mongoose;
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const userSchema = new  Schema({
   names: { type: String, required: true },
   bloodType: { type: String, required: true },
   province: { type: String, required: true },
@@ -12,7 +13,7 @@ const userSchema = new Schema({
   id: { type: String, required: true, unique: true },
   phoneNumber: { type: String, required: true },
   preferredLanguage: { type: String, required: true },
-  KGL: { type: String, required: true },
+  kgl: { type: String, required: true }, // Field name should be lowercase 'kgl'
   age: { type: Number, required: true },
   donationTimes: { type: Number, default: 0 },
   role: { type: String, enum: ['donor', 'hospital', 'admin'], default: 'donor' }
